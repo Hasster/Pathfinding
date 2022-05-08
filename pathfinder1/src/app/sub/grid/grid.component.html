@@ -1,0 +1,16 @@
+<div class="grid">
+    <div *ngFor="let Y of YArray"
+         class="grid-row">
+        <div *ngFor="let X of XArray"
+             class="grid-cell">
+            <app-cell [height]="cellHeight"
+                      [width]="cellWidth"
+                      [XAddress]="X"
+                      [YAddress]="Y"
+                      (roleChange)="onCellRoleChange($event)"></app-cell>
+        </div>
+    </div>
+</div>
+
+<br>
+<button (click)="sendGrid()">Send Grid</button>

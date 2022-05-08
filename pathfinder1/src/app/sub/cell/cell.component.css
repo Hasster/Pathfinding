@@ -1,0 +1,40 @@
+.gridCell {
+    border: black solid 1px;
+    margin: 0px;
+    text-align: center;
+
+}
+
+.gridCell:hover {
+    border: red solid 2px;
+    outline: 0;
+    margin: 0;
+}
+
+.selected {
+    text-align: center;
+    background-color: black;
+}
+
+.start {
+    text-align: center;
+    background-color: green;
+}
+
+.end {
+    text-align: center;
+    background-color: blue;
+}
+
+.cell-addr {
+    font-weight: 100;
+    font-size: 9px;
+    color: darkgrey;
+    text-align: start;
+    margin-left: 5px;
+}
+
+.cell-order {
+    color: darkgrey;
+    font-weight: 700;
+}
