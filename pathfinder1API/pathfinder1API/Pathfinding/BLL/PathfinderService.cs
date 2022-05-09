@@ -70,7 +70,7 @@ namespace pathfinder1API.Pathfinding.BLL
             {
                 for (int x = 0; x < map[y].Length; x++)
                 {
-                    if (map[y][x] == valueToSearchFor) return new Vector2(x, y);
+                    if (map[x][y] == valueToSearchFor) return new Vector2(x, y);
                 }
             }
 

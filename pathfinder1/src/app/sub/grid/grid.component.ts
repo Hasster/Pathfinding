@@ -52,7 +52,7 @@ export class GridComponent implements OnInit {
   }
 
   onCellRoleChange(roleData: number[]) {
-    this.gridState[roleData[1]][roleData[0]] = roleData[2];
+    this.gridState[roleData[0]][roleData[1]] = roleData[2];
   }
 
   sendGrid() {

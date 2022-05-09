@@ -63,6 +63,6 @@ export class CellComponent implements OnInit, AfterViewInit, OnDestroy {
       this.cellRole = 3;
       this.DivElement.nativeElement.className = "end";
     }
-    this.roleChange.next([this.YAddress, this.XAddress, this.cellRole]);
+    this.roleChange.next([this.XAddress, this.YAddress, this.cellRole]);
   }
 }
