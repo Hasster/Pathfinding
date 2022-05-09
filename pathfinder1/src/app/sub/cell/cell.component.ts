@@ -18,6 +18,7 @@ export class CellComponent implements OnInit, AfterViewInit, OnDestroy {
   cellContents: string = '';
   DivElement!: ElementRef;
   cellRole: number = 0;//0-none,1-obstacle,2-start,3-end
+  isDebugMode = false;
 
   constructor(private baseComms: BaseCommsService) { }
   ngOnDestroy(): void {
@@ -45,9 +46,9 @@ export class CellComponent implements OnInit, AfterViewInit, OnDestroy {
     this.DivElement.nativeElement.style.height = this.height + 'px';
   }
 
-  mouseClick(event: any) {
-    console.log('address is ' + this.XAddress + ' by ' + this.YAddress)
+  handleRoleChange(event: any) {
     let e = event as PointerEvent;
+    e.preventDefault();
     if (!e.ctrlKey && !e.altKey) {
       if (this.cellRole === 0) {
         this.cellRole = 1;
@@ -65,4 +66,17 @@ export class CellComponent implements OnInit, AfterViewInit, OnDestroy {
     }
     this.roleChange.next([this.XAddress, this.YAddress, this.cellRole]);
   }
+
+  mouseEnter(event: any) {
+    // console.log(event);
+    let e = event as PointerEvent;
+    if (e.button == 0 && e.buttons == 1) {
+      this.handleRoleChange(event);
+    }
+  }
+
+  mouseClick(event: any) {
+    this.handleRoleChange(event);
+  }
+
 }

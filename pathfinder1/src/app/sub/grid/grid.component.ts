@@ -1,6 +1,5 @@
 import { Component, ElementRef, Input, OnInit } from '@angular/core';
 import { BaseCommsService } from 'src/app/_BaseCommsService/base-comms.service';
-import { CellComponent } from '../cell/cell.component';
 import { grid_DTO_OUT } from './grid_DTO_OUT.model';
 
 @Component({
@@ -10,8 +9,8 @@ import { grid_DTO_OUT } from './grid_DTO_OUT.model';
 })
 export class GridComponent implements OnInit {
 
-  @Input() gridX: number = 3;
-  @Input() gridY: number = 3;
+  @Input() gridX: number = 10;
+  @Input() gridY: number = 10;
   XArray: number[] = [];
   YArray: number[] = [];
   gridArray: ElementRef[][] = [];

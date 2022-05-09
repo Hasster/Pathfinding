@@ -20,7 +20,7 @@ namespace pathfinder1API.Pathfinding.BLL
 
             while (openList.Any())
             {
-                var currentTile = openList.OrderBy(x => x.CostDistance).First();
+                var currentTile = openList.OrderByDescending(x => x.CostDistance).Last();
                 if (IsSameTile(currentTile,targetTile))
                 {
                     Console.WriteLine("Path found! Tiles backwards:");
@@ -104,7 +104,7 @@ namespace pathfinder1API.Pathfinding.BLL
                 new GridTile()
                     {X = currentTile.X + 1, Y = currentTile.Y, Parent = currentTile, Cost = currentTile.Cost + 1}
             };
-            Console.WriteLine($"Considering tile {currentTile.X} : {currentTile.Y}");
+            //Console.WriteLine($"Considering tile {currentTile.X} : {currentTile.Y}");
             possibleTiles.ForEach(tile => tile.SetDistance(targetTile.X, targetTile.Y));
             var maxY = map.Length;
             var maxX = map[0].Length;

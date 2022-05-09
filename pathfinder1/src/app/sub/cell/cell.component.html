@@ -1,7 +1,9 @@
 <div #cell
      class="gridCell"
-     (click)="mouseClick($event)">
-    <div class="cell-addr">{{XAddress}}:{{YAddress}}</div>
+     (mousedown)="mouseClick($event)"
+     (mouseenter)="mouseEnter($event)">
+    <div *ngIf="isDebugMode"
+         class="cell-addr">{{XAddress}}:{{YAddress}}</div>
     <div class="cell-order">
         {{cellContents}}
     </div>
